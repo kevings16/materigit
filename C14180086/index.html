@@ -8,5 +8,22 @@
 </head>
 <body>
     <h1>Kevin GIovanni-C14180086</h1>
+    <input type="date" id="input_date">
+    <button onclick="selisihWaktu()"> Enter </button>
+    <br>
+    <h2 id="selisih"></h2>
+
+    <script>
+        function selisihWaktu(){
+            var inputElementValue = document.getElementById("input_date");
+            var date_today = new Date()
+            var date_input = new Date(inputElementValue.value);
+            
+            var beda_waktu = Math.abs(date_input.getTime() - date_today.getTime()); 
+            var beda_hari = beda_waktu / (1000 * 3600 * 24);
+            
+            document.getElementById("selisih").innerHTML = "selisih " + parseInt(beda_hari) + " hari";
+        }
+    </script>
 </body>
 </html>
