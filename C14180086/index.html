@@ -9,5 +9,26 @@
 <body>
     <h1>Kevin GIovanni-C14180086</h1>
     <h1>Tambahkan 2 buah</h1>
+    <input type="date" id="input_date">
+    <input type="date" id="input_date_2">
+    <button onclick="selisihWaktu()"> Enter </button>
+    <br>
+    <h2 id="selisih"></h2>
+
+    <p>merge,commit,pull,push</p>
+
+    <script>
+        function selisihWaktu(){
+            var inputElementValue = document.getElementById("input_date");
+            var inputElementValue2 = document.getElementById("input_date_2");
+            var date_input_1 = new Date(inputElementValue.value);
+            var date_input_2 = new Date(inputElementValue2.value)
+            
+            var beda_waktu = Math.abs(date_input_1.getTime() - date_input_2.getTime()); 
+            var beda_hari = beda_waktu / (1000 * 3600 * 24);
+            
+            document.getElementById("selisih").innerHTML = "selisih " + parseInt(beda_hari) + " hari";
+        }
+    </script>
 </body>
 </html>
